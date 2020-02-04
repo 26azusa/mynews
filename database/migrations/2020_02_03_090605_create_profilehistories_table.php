@@ -13,8 +13,11 @@ class CreateProfilehistoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('profilehistories', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('profile_histories', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('profile_id');
+            $table->string('edited_at');
+            
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateProfilehistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profilehistories');
+        Schema::dropIfExists('profile_histories');
     }
 }

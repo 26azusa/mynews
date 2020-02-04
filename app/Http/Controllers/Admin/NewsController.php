@@ -54,8 +54,6 @@ class NewsController extends Controller
       return view('admin.news.index', ['posts' => $posts, 'cond_title' => $cond_title]);
   }
 
-  // 以下を追記
-
   public function edit(Request $request)
   {
       // News Modelからデータを取得する
@@ -99,6 +97,7 @@ class NewsController extends Controller
 
       return redirect('admin/news');
   }
+  
   
   public function delete(Request $request){
     //該当するNews Modelを取得する
